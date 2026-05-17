@@ -1,0 +1,15 @@
+footer {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: #0e0e0e;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: #c8a96e;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 20px;
+}
+footer span {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+}/*# sourceMappingURL=footer.css.map */

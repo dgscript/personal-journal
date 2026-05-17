@@ -1,0 +1,40 @@
+@use "variables" as *;
+
+.notifi-container {
+  border: 1px solid $border;
+  background-color: $muted;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border-radius: 3px;
+  color: $text-primary;
+  font-weight: 300;
+  font-family: $sans;
+  padding: 10px 20px;
+  overflow: hidden;
+  z-index: 999;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: $accent;
+    top: 0;
+    left: 0;
+  }
+}
+
+.notifi-error {
+  &::before {
+    background-color: rgb(255, 90, 90) !important;
+  }
+}
+
+.notifi-success {
+  &::before {
+    background-color: rgb(98, 255, 90) !important;
+  }
+}

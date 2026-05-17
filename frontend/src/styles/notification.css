@@ -1,0 +1,33 @@
+.notifi-container {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: #2a2a2a;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border-radius: 3px;
+  color: #f0ece4;
+  font-weight: 300;
+  font-family: "DM Sans", sans-serif;
+  padding: 10px 20px;
+  overflow: hidden;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+.notifi-container::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background-color: #c8a96e;
+  top: 0;
+  left: 0;
+}
+
+.notifi-error::before {
+  background-color: rgb(255, 90, 90) !important;
+}
+
+.notifi-success::before {
+  background-color: rgb(98, 255, 90) !important;
+}/*# sourceMappingURL=notification.css.map */

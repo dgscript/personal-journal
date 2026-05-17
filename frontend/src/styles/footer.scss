@@ -1,0 +1,16 @@
+@use "variables" as *;
+
+footer {
+  user-select: none;
+  background-color: $ink;
+  border-top: 1px solid $border;
+  color: $accent;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 20px;
+
+  span {
+    font-family: $serif;
+    font-style: italic;
+  }
+}

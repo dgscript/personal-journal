@@ -1,0 +1,35 @@
+.not-found-container {
+  width: 100%;
+  height: 80dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.not-found-container h1 {
+  font-size: 3rem;
+  font-family: "Playfair Display", Georgia, serif;
+  color: #f0ece4;
+}
+.not-found-container .code {
+  font-size: 4rem;
+  color: #c8a96e;
+}
+.not-found-container .msg {
+  font-size: 1rem;
+  color: #8a867e;
+  font-family: "Playfair Display", Georgia, serif;
+}
+.not-found-container a {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background-color: transparent;
+  color: #8a867e;
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  transition: all 0.2s ease;
+}
+.not-found-container a:hover {
+  border-color: #8a867e;
+  color: #f0ece4;
+}/*# sourceMappingURL=notfound.css.map */

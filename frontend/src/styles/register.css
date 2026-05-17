@@ -1,0 +1,82 @@
+.register-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90dvh;
+}
+.register-wrapper .register-container {
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  min-width: 400px;
+}
+.register-wrapper .register-container form {
+  display: flex;
+  flex-direction: column;
+}
+.register-wrapper .register-container p:first-child {
+  color: var(--text-primary);
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.register-wrapper .register-container p:nth-child(2) {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 300px;
+}
+.register-wrapper .register-container label {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+}
+.register-wrapper .register-container input {
+  border: 1px solid var(--border);
+  background-color: var(--muted);
+  border-radius: 3px;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  transition: all 0.2s ease;
+}
+.register-wrapper .register-container input:focus {
+  outline: 2px solid var(--accent);
+}
+.register-wrapper .register-container button {
+  border-radius: 3px;
+  border: none;
+  background-color: var(--accent);
+  font-size: 0.7rem;
+  padding: 13px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.register-wrapper .register-container button:hover {
+  cursor: pointer;
+  background-color: var(--text-primary);
+}
+.register-wrapper .register-container p:last-child {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-align: center;
+}
+.register-wrapper .register-container p:last-child span a {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+.register-wrapper .register-container p:last-child span a:hover {
+  color: var(--text-primary);
+}
+
+.invalid-register {
+  color: rgb(255, 108, 108) !important;
+}/*# sourceMappingURL=register.css.map */
