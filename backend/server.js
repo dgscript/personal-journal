@@ -26,6 +26,8 @@ app.use(
   cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
 app.use(express.json());
@@ -106,7 +108,7 @@ app.post(
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
+      secure: true,
       sameSite: "none",
     });
 
@@ -119,7 +121,7 @@ app.post(
 app.post("/logoff", authMiddleware, (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: false,
+    secure: true,
     sameSite: "none",
   });
 
