@@ -18,7 +18,7 @@ const limiter = rateLimit({
   message: "Too many requests, try again later.",
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(limiter);
@@ -174,6 +174,6 @@ app.delete("/posts/:id", deletePost, async (req, res) => {
   }
 });
 
-app.listen(8805, () => {
-  console.log("Server running in port 8805");
+app.listen(PORT, () => {
+  console.log("Server running in port " + PORT);
 });
