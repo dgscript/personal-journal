@@ -107,6 +107,7 @@ app.post(
     res.cookie("token", token, {
       httpOnly: true,
       secure: false,
+      sameSite: "none",
     });
 
     return res.status(200).json({
@@ -119,6 +120,7 @@ app.post("/logoff", authMiddleware, (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
     secure: false,
+    sameSite: "none",
   });
 
   res.status(200).json({
