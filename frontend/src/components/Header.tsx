@@ -3,6 +3,7 @@ import "../styles/header.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const { user, setUser, loading } = useAuth();
@@ -34,8 +35,8 @@ export default function Header() {
         { withCredentials: true },
       );
       console.log(response);
-      setUser(null);
       window.location.href = "/";
+      setUser(null);
     } catch (error) {
       console.log(error);
     }
@@ -49,15 +50,32 @@ export default function Header() {
         </Link>
 
         <nav>
-          <Link to={{ pathname: "/" }}>HOME</Link>
-          <Link to={{ pathname: "/write" }}>WRITE</Link>
+          <Link
+            to={{ pathname: "/" }}
+            style={{
+              color: `${useLocation().pathname === "/" ? "var(--accent)" : ""}`,
+            }}
+          >
+            HOME
+          </Link>
+          <Link
+            to={{ pathname: "/write" }}
+            style={{
+              color: `${useLocation().pathname === "/write" ? "var(--accent)" : ""}`,
+            }}
+          >
+            WRITE
+          </Link>
         </nav>
 
         <div className="header-buttons">
           {loading ? (
             <>
               <button className="skeleton-btn">
-                <span>???????</span>
+                <span>??????</span>
+              </button>
+              <button className="skeleton-btn">
+                <span>??????</span>
               </button>
             </>
           ) : !user ? (
@@ -67,7 +85,13 @@ export default function Header() {
             </>
           ) : (
             <>
-              <Link className="profile-btn" to={{ pathname: "/me" }}>
+              <Link
+                className="profile-btn"
+                to={{ pathname: "/me" }}
+                style={{
+                  color: `${useLocation().pathname === "/me" ? "var(--accent)" : ""}`,
+                }}
+              >
                 {user.username}
               </Link>
               <button className="log-off-btn" onClick={() => logoff()}>
@@ -104,8 +128,22 @@ export default function Header() {
       {windowWidth < 768 && (
         <div className={`dropdown-nav ${dropdown ? "dropdown-active" : ""}`}>
           <div className="dropdown-links">
-            <Link to={{ pathname: "/" }}>HOME</Link>
-            <Link to={{ pathname: "/write" }}>WRITE</Link>
+            <Link
+              to={{ pathname: "/" }}
+              style={{
+                color: `${useLocation().pathname === "/" ? "var(--accent)" : ""}`,
+              }}
+            >
+              HOME
+            </Link>
+            <Link
+              to={{ pathname: "/write" }}
+              style={{
+                color: `${useLocation().pathname === "/write" ? "var(--accent)" : ""}`,
+              }}
+            >
+              WRITE
+            </Link>
 
             {loading ? null : !user ? (
               <>
@@ -118,7 +156,13 @@ export default function Header() {
               </>
             ) : (
               <>
-                <Link className="profile-btn" to={{ pathname: "/me" }}>
+                <Link
+                  className="profile-btn"
+                  to={{ pathname: "/me" }}
+                  style={{
+                    color: `${useLocation().pathname === "/me" ? "var(--accent)" : ""}`,
+                  }}
+                >
                   {user.username}
                 </Link>
                 <button className="log-off-btn" onClick={() => logoff()}>

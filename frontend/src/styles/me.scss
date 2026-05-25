@@ -127,6 +127,34 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  .next-prev-btns {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    p {
+      color: $text-muted;
+      font-size: 0.9rem;
+      margin-right: 20px;
+    }
+
+    button {
+      border: 1px solid $accent;
+      background-color: transparent;
+      color: $accent;
+      padding: 5px 10px;
+      border-radius: 3px;
+      margin-left: 5px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: $accent;
+        color: $ink;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .post {
@@ -375,6 +403,19 @@
     border-color: $muted !important;
     color: $muted !important;
     background-color: $surface !important;
+  }
+}
+.empty-posts-msg {
+  color: $text-primary;
+  font-size: 1rem;
+  text-align: center;
+  font-family: $serif;
+  padding: 30px 0;
+  line-height: 30px;
+  user-select: none;
+  span {
+    color: $accent;
+    font-family: $sans;
   }
 }
 

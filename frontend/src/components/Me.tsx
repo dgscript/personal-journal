@@ -16,6 +16,8 @@ export default function Me() {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
   const [userPosts, setUserPosts] = useState<UserPosts[]>([]);
+  const [postDisplay, setPostDisplay] = useState<UserPosts[]>([]);
+  const [pageIndex, setPageIndex] = useState<number>(0);
   const [filter, setFilter] = useState<string>("oldest");
   const [searchVal, setSearchVal] = useState<string>("");
   const [postId, setPostId] = useState<{
@@ -35,8 +37,8 @@ export default function Me() {
     }
 
     if (user?.posts) {
+      setPostDisplay(user.posts.slice(0, 5));
       setUserPosts(user.posts);
-      sortPosts();
     }
   }, [user, loading]);
 
@@ -76,6 +78,17 @@ export default function Me() {
     }
   }, [postId]);
 
+  useEffect(() => {
+    if (user?.posts.length === 0) return;
+
+    console.log(pageIndex);
+
+    const start = pageIndex;
+    const end = pageIndex + 5;
+    const postBlock = userPosts.slice(start, end);
+    setPostDisplay(postBlock);
+  }, [pageIndex, userPosts]);
+
   function sortPosts() {
     setUserPosts((prev) => {
       let filtered;
@@ -96,6 +109,26 @@ export default function Me() {
 
       return filtered || prev;
     });
+  }
+
+  function postsPage(button: string) {
+    if (button === "next") {
+      setPageIndex((prev) => {
+        if (prev >= userPosts.length - 5) {
+          return prev;
+        } else {
+          return prev + 5;
+        }
+      });
+    } else {
+      setPageIndex((prev) => {
+        if (prev === 0) {
+          return 0;
+        } else {
+          return prev - 5;
+        }
+      });
+    }
   }
 
   return (
@@ -184,8 +217,8 @@ export default function Me() {
               </path>
             </svg>
           </div>
-        ) : user ? (
-          userPosts.map((post) => (
+        ) : user && userPosts.length > 0 ? (
+          postDisplay.map((post) => (
             <div className="post" key={post.post_id}>
               <p className="post-title">{post.title}</p>
               <p className="post-content">{post.content}</p>
@@ -243,7 +276,32 @@ export default function Me() {
               </div>
             </div>
           ))
-        ) : null}
+        ) : (
+          <p className="empty-posts-msg">
+            It seems you have no posts yet. <br /> Click on the{" "}
+            <span>NEW POST</span> button and start your journal!
+          </p>
+        )}
+
+        {userPosts.length !== 0 && (
+          <div className="next-prev-btns">
+            <p>
+              Page {(pageIndex + 5) / 5} | {Math.ceil(userPosts.length / 5)}
+            </p>
+            <button
+              className={`${pageIndex === 0 && "disabled-btn"}`}
+              onClick={() => postsPage("prev")}
+            >
+              Previous
+            </button>
+            <button
+              className={`${pageIndex >= userPosts.length - 5 && "disabled-btn"}`}
+              onClick={() => postsPage("next")}
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
