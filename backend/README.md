@@ -2,7 +2,7 @@
 
 Node.js/Express REST API with MySQL database for the Personal Posts application.
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 middleware/
@@ -16,7 +16,7 @@ database.js          # MySQL connection
 server.js            # Express app setup & routes
 ```
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### Authentication
 
@@ -170,7 +170,7 @@ GET /ping
 }
 ```
 
-## 🗄️ Database Schema
+## Database Schema
 
 ### Users Table
 
@@ -197,7 +197,7 @@ CREATE TABLE posts (
 );
 ```
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 Create a `.env` file in the backend directory:
 
@@ -210,7 +210,7 @@ DATABASE=your_database_name
 JWT_PASSWORD=your_jwt_secret_key
 ```
 
-## 🔐 Middleware
+## Middleware
 
 ### authMiddleware
 
@@ -251,7 +251,7 @@ JWT_PASSWORD=your_jwt_secret_key
 - Validates post ownership
 - Returns 403 if user doesn't own post
 
-## 📦 Dependencies
+## Dependencies
 
 - **express** ^5.2.1 - Web framework
 - **mysql2** ^3.22.3 - MySQL client
@@ -262,7 +262,7 @@ JWT_PASSWORD=your_jwt_secret_key
 - **dotenv** ^17.4.2 - Environment variables
 - **nodemon** ^3.1.14 - Dev server auto-reload
 
-## 🐛 Common Issues
+## Common Issues
 
 **"Invalid or expired token"**
 

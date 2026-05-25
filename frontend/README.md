@@ -2,7 +2,7 @@
 
 React-based single-page application for the Personal Posts platform.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -29,7 +29,7 @@ src/
 └── assets/                   # Images, fonts, etc.
 ```
 
-## 🎨 Components
+## Components
 
 ### App.tsx
 
@@ -171,7 +171,7 @@ Modal components for post management.
 - Validation
 - Submit/cancel buttons
 
-## 🎯 State Management
+## State Management
 
 **AuthContext** provides:
 
@@ -182,7 +182,7 @@ Modal components for post management.
 
 Uses axios for API calls with credentials (cookies for JWT).
 
-## 🎨 Styling
+## Styling
 
 **SCSS Variables** (\_variables.scss):
 
@@ -213,29 +213,6 @@ $ink            // Text on accent color
 $red            // Delete/error color
 ```
 
-## 🚀 Getting Started
-
-### Development
-
-```bash
-npm install
-npm run dev
-# App runs at http://localhost:5173
-```
-
-### Build
-
-```bash
-npm run build
-npm run preview  # Preview production build
-```
-
-### Linting
-
-```bash
-npm run lint
-```
-
 ## 🔌 API Integration
 
 Axios configured to use credentials for cookie-based authentication:
@@ -261,7 +238,7 @@ axios.get("http://localhost:8805/posts", {
 | PUT    | `/posts`     | Update post              |
 | DELETE | `/posts/:id` | Delete post              |
 
-## 📦 Dependencies
+## Dependencies
 
 **Core:**
 
@@ -277,7 +254,7 @@ axios.get("http://localhost:8805/posts", {
 - **eslint** - Code quality
 - **@vitejs/plugin-react** - Vite React support
 
-## 🎯 Features
+## Features
 
 - ✅ User registration & authentication
 - ✅ Create, read, update, delete posts
@@ -290,7 +267,7 @@ axios.get("http://localhost:8805/posts", {
 - ✅ Rate limiting (backend enforced)
 - ✅ Loading states
 
-## 🔐 Security
+## Security
 
 - JWT tokens stored in HTTP-only cookies
 - Credentials included in all API requests
@@ -298,7 +275,7 @@ axios.get("http://localhost:8805/posts", {
 - Protected routes (require authentication)
 - Rate limiting on auth endpoints
 
-## 🐛 Common Issues
+## Common Issues
 
 **"Invalid or expired token"**
 
@@ -317,10 +294,3 @@ axios.get("http://localhost:8805/posts", {
 - Backend CORS is configured for `localhost:5173`
 - Verify both frontend and backend are running
 - Check backend .env has correct PORT
-
-## 📝 TypeScript Configurations
-
-- `tsconfig.json` - Base configuration
-- `tsconfig.app.json` - App-specific settings
-- `tsconfig.node.json` - Build tool settings
-- Full strict mode enabled for type safety
