@@ -69,7 +69,6 @@ export default function Login() {
           withCredentials: true,
         },
       );
-      console.log(response.data);
       setMsgProcessIndex(0);
       submitBtn.current!.disabled = false;
       showNotification(`Welcome back, ${response.data.username}!`, "success");
