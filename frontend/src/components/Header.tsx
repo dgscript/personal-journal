@@ -29,12 +29,11 @@ export default function Header() {
 
   async function logoff() {
     try {
-      const response = await axios.post(
+      await axios.post(
         `${import.meta.env.VITE_API_URL}/logoff`,
         {},
         { withCredentials: true },
       );
-      console.log(response);
       window.location.href = "/";
       setUser(null);
     } catch (error) {

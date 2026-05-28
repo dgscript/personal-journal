@@ -77,7 +77,7 @@ export default function Write() {
       );
 
     try {
-      const response = await axios.post(
+      await axios.post(
         `${import.meta.env.VITE_API_URL}/posts`,
         {
           title: title,
