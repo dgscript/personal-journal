@@ -1,0 +1,50 @@
+.main-loading-container {
+  z-index: 99999;
+  position: fixed;
+  height: 100dvh;
+  width: 100%;
+  background-color: #1c1c1c;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-loading-container .main-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.main-loading-container .main-loading div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c8a96e;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  gap: 10px;
+}
+.main-loading-container .main-loading div img {
+  width: 30px;
+}
+.main-loading-container .main-loading .l-msg {
+  color: #8a867e;
+  animation-name: loading;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+  0% {
+    color: #8a867e;
+  }
+  50% {
+    color: #f0ece4;
+  }
+  100% {
+    color: #8a867e;
+  }
+}/*# sourceMappingURL=loading.css.map */

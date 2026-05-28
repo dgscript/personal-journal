@@ -2,8 +2,12 @@ import TypeIt from "typeit-react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import "../styles/home.css";
+import Loading from "./Loading";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Home() {
+  const { user, loading } = useAuth();
+
   const texts = [
     {
       title: "Two Cold Cups",
@@ -31,6 +35,7 @@ export default function Home() {
   return (
     <>
       <div className="home-container">
+        {loading && !user && <Loading />}
         <div className="home-hero">
           <p>PERSONAL WRITING SPACE</p>
           <h2>
