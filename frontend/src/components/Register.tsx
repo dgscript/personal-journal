@@ -59,7 +59,6 @@ export default function Register() {
           withCredentials: true,
         },
       );
-      console.log(response.data);
       setMsgProcessIndex(MSG_INDEX.default);
       submitBtn.current!.disabled = false;
       setUser(response.data);

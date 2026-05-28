@@ -60,8 +60,6 @@ export default function Me() {
     if (!user) return;
 
     sortPosts();
-
-    console.log(userPosts);
   }, [filter]);
 
   useEffect(() => {
@@ -80,8 +78,6 @@ export default function Me() {
 
   useEffect(() => {
     if (user?.posts.length === 0) return;
-
-    console.log(pageIndex);
 
     const start = pageIndex;
     const end = pageIndex + 5;

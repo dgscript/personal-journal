@@ -87,7 +87,6 @@ export default function Write() {
           withCredentials: true,
         },
       );
-      console.log(response.data);
       setTitle("");
       setContent("");
       window.location.href = "/me";
