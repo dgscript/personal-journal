@@ -9,8 +9,16 @@ footer {
   font-size: 0.9rem;
   padding: 20px;
 
-  span {
+  a {
     font-family: $serif;
     font-style: italic;
+    text-decoration: underline;
+    transition: all 0.2s ease;
+    color: $accent;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
   }
 }

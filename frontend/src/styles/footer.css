@@ -9,7 +9,14 @@ footer {
   font-size: 0.9rem;
   padding: 20px;
 }
-footer span {
+footer a {
   font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
+  text-decoration: underline;
+  transition: all 0.2s ease;
+  color: #c8a96e;
+}
+footer a:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }/*# sourceMappingURL=footer.css.map */
